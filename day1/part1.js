@@ -111,5 +111,5 @@ function main(array) {
     }
     return total
 }
-
+//  Answer 3497399
 console.log(main(json))
