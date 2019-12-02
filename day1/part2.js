@@ -100,15 +100,24 @@ var json = [
     87955,
     143030
 ]
-function main(array) {
-    var total = 0;
-    for (let i = 0; i < array.length; i++) {
-        const a = array[i];
-        let b = a / 3
-        let c = Math.floor(b)
-        total = total + (c - 2)
+function main(arr) {
+    var total = 0
+    for (let i = 0; i < arr.length; i++) {
+        var temp = arr[i];
+        do {        
+            temp = calculateFuel(temp)
+            if(temp > 0)
+                total = total + temp
+        }
+        while(temp > 0)
     }
     return total
 }
-//  Answer 3497399
+
+function calculateFuel(v) {
+    let a = v / 3
+    let b = Math.floor(a)
+    return (b - 2)
+}
+//  Answer in 5243207
 console.log(main(json))
